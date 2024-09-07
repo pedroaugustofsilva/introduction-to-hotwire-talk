@@ -1,12 +1,6 @@
-<div id="<%= dom_id post %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Content:</strong>
-    <%= post.content %>
-  </p>
+<div id="<%= dom_id post %>" class="block w-full p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+  <h5 class="mb-2 text-lg tracking-tight text-white"><span class="font-bold"><%= post.user.username %></span> shared</h5>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">User:</strong>
-    <%= post.user_id %>
-  </p>
-
+  <p class="font-normal text-gray-100"><%= post.content %></p>
 </div>
+

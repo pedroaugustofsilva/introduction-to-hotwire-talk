@@ -5,17 +5,18 @@
 
   <% content_for :title, "X Social" %>
 
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center mb-5">
     <h1 class="font-bold text-4xl">Hello, <%= @current_user.username %>!</h1>
     <%= link_to "Share", new_post_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="posts" class="min-w-full">
+  <div id="posts" class="min-w-full flex flex-col gap-5">
     <% @posts.each do |post| %>
       <%= render post %>
-      <p>
-        <%= link_to "Show this post", post, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      </p>
+
+<!--      <p>-->
+        <%#= link_to "Show this post", post, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+<!--      </p>-->
     <% end %>
   </div>
 </div>
