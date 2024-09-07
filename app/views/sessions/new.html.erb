@@ -1,0 +1,15 @@
+<div class="flex justify-center items-center min-h-screen">
+  <div class="border border-slate-700 rounded-lg bg-slate-800 w-11/12 sm:w-96 p-5 shadow-[0_10px_60px_-10px_rgba(100,100,100,0.5)]">
+    <h1 class="text-center text-2xl font-bold mb-5">X Social</h1>
+    <%= form_with(scope: :sessions, url: create_session_path) do |f| %>
+      <% if @user.errors %>
+        <% @user.errors.full_messages.each do |message| %>
+          <%= message %>
+        <% end %>
+      <% end %>
+      <%= f.text_field :username, placeholder: "Nome de usuário", class: 'rounded-lg border-none bg-slate-700 text-sm w-full py-3 px-5' %>
+
+      <%= f.button "Login", class: 'bg-slate-900 w-full py-3 rounded-lg mt-5 font-semibold text-slate-300' %>
+    <% end %>
+  </div>
+</div>
