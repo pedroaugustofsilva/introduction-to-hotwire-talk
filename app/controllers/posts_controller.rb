@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_post, only: %i[ show edit update destroy like ]
   before_action :authenticate
 
   # GET /posts or /posts.json
@@ -55,6 +55,14 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def like
+    @post.update!(likes: @post.likes + 1)
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
     end
   end
 

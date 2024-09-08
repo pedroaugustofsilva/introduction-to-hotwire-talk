@@ -19,6 +19,8 @@
     <%= stylesheet_link_tag :all, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= tag.meta name: "current-user-id", content: @current_user&.id %>
+    <%= turbo_refresh_scroll_tag(:preserve) %>
+    <%= turbo_refresh_method_tag(:morph) %>
   </head>
 
   <body>
