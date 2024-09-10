@@ -6,7 +6,7 @@
     <%= link_to "Share", new_post_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="posts" class="min-w-full flex flex-col gap-5">
+  <div id="posts" class="min-w-full flex flex-col gap-5 mt-5">
     <% @posts.each do |post| %>
       <%= render post %>
 
