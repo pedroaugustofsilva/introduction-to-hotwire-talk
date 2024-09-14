@@ -3,8 +3,10 @@
 
   <div class="flex justify-between items-center mb-5">
     <h1 class="font-bold text-4xl">Hello, <%= @current_user.username %>!</h1>
-    <%= link_to "Share", new_post_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <%= link_to "Share", new_post_path, data: { turbo_frame: :new_post }, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
+
+  <%= turbo_frame_tag :new_post %>
 
   <div id="posts" class="min-w-full flex flex-col gap-5 mt-5">
     <% @posts.each do |post| %>
@@ -16,3 +18,5 @@
     <% end %>
   </div>
 </div>
+
+<%= turbo_stream_from :posts %>

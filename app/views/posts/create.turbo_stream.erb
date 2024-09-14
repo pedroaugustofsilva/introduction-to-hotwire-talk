@@ -1,0 +1,2 @@
+<%= turbo_stream.replace :new_post, turbo_frame_tag(:new_post) %>
+<%= turbo_stream.prepend :posts, partial: "posts/post", locals: { post: @post } %>

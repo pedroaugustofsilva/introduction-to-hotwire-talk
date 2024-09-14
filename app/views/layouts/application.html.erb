@@ -25,38 +25,6 @@
 
   <body>
   <script>
-    function simulateHeavyOperation(options = {}) {
-      const {
-        duration = 5000,
-        steps = 10,
-        onProgress = () => {}
-      } = options;
-
-      const stepDuration = duration / steps;
-      const start = Date.now();
-
-      for (let i = 0; i < steps; i++) {
-        const now = Date.now();
-        while (Date.now() - now < stepDuration) {
-          // Busy wait
-        }
-        const progress = ((i + 1) / steps) * 100;
-        onProgress(progress);
-      }
-
-      const actualDuration = Date.now() - start;
-      console.log(`Heavy operation completed in ${actualDuration}ms`);
-    }
-
-    // Immediately invoke the heavy operation
-    simulateHeavyOperation({
-      duration: 1000,
-      steps: 10,
-      onProgress: (progress) => {
-        console.log(`Loading: ${progress.toFixed(2)}%`);
-        // You could update a progress element here if it existed
-      }
-    });
   </script>
     <main class="bg-gradient-to-tl from-indigo-950 to-stone-950 w-full min-h-screen text-white">
       <%= yield %>
